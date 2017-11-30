@@ -37,11 +37,14 @@ def logistic_regression(features, target, num_steps, learning_rate, add_intercep
 
 
 data = DigitData()
-Y = np.array([1 if (y[1] == 1) else -1 for y in data.Ytrn])
-weights = logistic_regression(data.Xtrn, Y,
+X = data.Xtrn
+# for j in range(X.shape[0]):
+#     X[:, j] = (X[:, j] - X[:,j].mean())
+Y = np.array([1 if (y[1] == 1) else 0 for y in data.Ytrn])
+weights = logistic_regression(X, Y,
                               num_steps=300000, learning_rate=5e-5, add_intercept=True)
 
 X = data.Xtest.copy()
 X = np.insert(X, 0, values=1, axis=1)
 
-print sigmoid((X*weights).sum(axis=0))
+print [1 if y> 0 else 0 for y in sigmoid(X.dot(weights))]

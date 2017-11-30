@@ -48,8 +48,8 @@ class SVM():
 
             # # Check convergence
             diff = np.linalg.norm(alpha - alpha_prev)
-            # if diff < 0.01:
-            #     break
+            if diff < 0.001:
+                break
             if count >= self.max_iter:
                 # print("Iteration number exceeded the max of %d iterations" % (self.max_iter))
                 break

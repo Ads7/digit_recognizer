@@ -12,8 +12,8 @@ class DigitData(object):
     mnist = input_data.read_data_sets(CWD + "/data/", one_hot=True)
     classses = [0,1,2,3,4,5,6,7,8,9]
     # todo remove limit
-    Xtrn, Ytrn = np.array(mnist.train.images[:50]), np.array(mnist.train.labels[:50])
-    Xtest, Ytest = np.array(mnist.test.images), np.array(mnist.test.labels,dtype=int)
+    Xtrn, Ytrn = np.array(mnist.train.images[:1000]), np.array(mnist.train.labels[:1000],dtype=int)
+    Xtest, Ytest = np.array(mnist.test.images[:100]), np.array(mnist.test.labels[:100],dtype=int)
 
 
 
@@ -70,7 +70,7 @@ class SVM(object):
     def train(self):
         data = DigitData()
         Y = np.array([1 if (y[0] == 1) else 0 for y in data.Ytrn])
-        self.trial_svm(self.epochs,data.Xtrn,Y)
+        # self.trial_svm(self.epochs,data.Xtrn,Y)
 
         # alpha, b, count = self.simplified_smo(1, self.epochs, data.Xtrn, data.Ytrn, self.tolrence)
         # w = self.get_weight(data.Xtrn,data.Ytrn,alpha)
@@ -165,5 +165,5 @@ class SVM(object):
                 passes = 0
 
         return alpha, b, modifiedCount
-
-SVM().train()
+#
+# SVM().train()
