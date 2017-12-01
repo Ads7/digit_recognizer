@@ -103,7 +103,6 @@ def simplifiedSMO(regParam, maxPasses, Xtrn, Ytrn, tol):
     passes = 0
     while passes < maxPasses:
         modifiedCount = 0
-        print(passes)
         for i in range(Ytrn.shape[0]):
             fi = computeClassifier(Xtrn[i], b, alpha,Xtrn,Ytrn)
             Ei = fi - Ytrn[i]
@@ -173,7 +172,7 @@ confidence_list = []
 for clasification in data.classses:
     Y = np.array([1 if (y[clasification] == 1) else -1 for y in data.Ytrn])
     ytest = np.array([1 if (y[clasification] == 1) else -1 for y in data.Ytest])
-    alpha, b, count = simplifiedSMO(1, 20, data.Xtrn, Y, 0.01)
+    alpha, b, count = simplifiedSMO(1, 20, data.Xtrn, Y, 0.001)
 
     weight = np.zeros((data.Xtrn.shape[1],1), dtype=np.float32).T
 
@@ -182,7 +181,6 @@ for clasification in data.classses:
     #print("weights: ", weight, " b: ", b)
     Ysvm = mySvm(data.Xtrn, weight, b)
     Ysvm2 = mySvm(data.Xtest, weight, b)
-    print Ysvm
     print("Classification Error on training samples of dataset1: ", computeError(Y, Ysvm))
     print("Classification Error on test samples of dataset1: ", computeError(ytest, Ysvm2))
 
