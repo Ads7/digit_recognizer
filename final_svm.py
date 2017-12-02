@@ -12,8 +12,8 @@ class DigitData(object):
     mnist = input_data.read_data_sets(CWD + "/data/", one_hot=True)
     classses = [0,1,2,3,4,5,6,7,8,9]
     # todo remove limit
-    Xtrn, Ytrn = np.array(mnist.train.images[:1000]), np.array(mnist.train.labels[:1000],dtype=int)
-    Xtest, Ytest = np.array(mnist.test.images[:10]), np.array(mnist.test.labels[:10],dtype=int)
+    Xtrn, Ytrn = np.array(mnist.train.images[:10000]), np.array(mnist.train.labels[:10000],dtype=int)
+    Xtest, Ytest = np.array(mnist.test.images), np.array(mnist.test.labels,dtype=int)
 
 
 
