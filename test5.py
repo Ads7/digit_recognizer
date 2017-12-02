@@ -133,20 +133,20 @@ def calc_acc(y, y_hat):
 model = SVM()
 
 data = DigitData()
-predictive_model = np.full((data.Ytest.shape[0], 10), 0, dtype=int)
+predictive_model = np.full((data.Y_test.shape[0], 10), 0, dtype=int)
 confidence_list = []
 for clasification in data.classses:
     print "model for " + str(clasification)
-    Y = np.array([1 if (y[clasification] == 1) else -1 for y in data.Ytrn])
+    Y = np.array([1 if (y[clasification] == 1) else -1 for y in data.Y_train])
     # Fit model
-    support_vectors, iterations = model.fit(data.Xtrn, Y)
-    y_hat = model.predict(data.Xtest)
+    support_vectors, iterations = model.fit(data.X_train, Y)
+    y_hat = model.predict(data.X_test)
     for i, y in enumerate(y_hat):
         if y == -1:
             pass
         else:
             predictive_model[i][clasification] += y
-    ytest = np.array([1 if (y[clasification] == 1) else -1 for y in data.Ytest])
+    ytest = np.array([1 if (y[clasification] == 1) else -1 for y in data.Y_test])
     confidence_list.append(calc_acc(ytest, y_hat))
 # from sklearn import datasets, svm, metrics
 # # The digits dataset
@@ -163,7 +163,7 @@ for clasification in data.classses:
 count = 0
 random_val = 0
 for i in range(10):
-    value = np.where(data.Ytest[i] == 1)[0][0]
+    value = np.where(data.Y_test[i] == 1)[0][0]
     value_predict = np.where(predictive_model[i] == 1)[0]
     if len(np.where(predictive_model[i] == 1)[0]) > 1:
         value_predict = confidence_list.index(max(map(lambda x: confidence_list[x], value_predict)))
@@ -175,10 +175,9 @@ for i in range(10):
         count += 1
     else:
         print value, value_predict
-print count
-print random_val
+
 # Calculate accuracy
-acc = calc_acc(data.Ytest, predictive_model)
+acc = calc_acc(data.Y_test, predictive_model)
 
 # print("Support vector count: %d" % (sv_count))
 # print("bias:\t\t%.3f" % (model.b))

@@ -153,7 +153,7 @@ def simplifiedSMO(regParam, maxPasses, Xtrn, Ytrn, tol):
 
 
 data = DigitData()
-predictive_model = np.full((data.Ytest.shape[0], 10), 0, dtype=int)
+predictive_model = np.full((data.Y_test.shape[0], 10), 0, dtype=int)
 confidence_list = []
 
 # for clasification in data.classses:
@@ -170,17 +170,17 @@ confidence_list = []
 #     ytest = np.array([1 if (y[clasification] == 1) else -1 for y in data.Ytest])
 #
 for clasification in data.classses:
-    Y = np.array([1 if (y[clasification] == 1) else -1 for y in data.Ytrn])
-    ytest = np.array([1 if (y[clasification] == 1) else -1 for y in data.Ytest])
-    alpha, b, count = simplifiedSMO(1, 20, data.Xtrn, Y, 0.001)
+    Y = np.array([1 if (y[clasification] == 1) else -1 for y in data.Y_train])
+    ytest = np.array([1 if (y[clasification] == 1) else -1 for y in data.Y_test])
+    alpha, b, count = simplifiedSMO(1, 20, data.X_train, Y, 0.001)
 
-    weight = np.zeros((data.Xtrn.shape[1],1), dtype=np.float32).T
+    weight = np.zeros((data.X_train.shape[1], 1), dtype=np.float32).T
 
-    for i in range(data.Ytrn.shape[0]):
-        weight += alpha[i] * Y[i] * data.Xtrn[i]
+    for i in range(data.Y_train.shape[0]):
+        weight += alpha[i] * Y[i] * data.X_train[i]
     #print("weights: ", weight, " b: ", b)
-    Ysvm = mySvm(data.Xtrn, weight, b)
-    Ysvm2 = mySvm(data.Xtest, weight, b)
+    Ysvm = mySvm(data.X_train, weight, b)
+    Ysvm2 = mySvm(data.X_test, weight, b)
     print("Classification Error on training samples of dataset1: ", computeError(Y, Ysvm))
     print("Classification Error on test samples of dataset1: ", computeError(ytest, Ysvm2))
 
