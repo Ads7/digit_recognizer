@@ -1,7 +1,9 @@
 import random
 import numpy as np
+
 from tensorflow.examples.tutorials.mnist import input_data
 
+from utils.data_processing import DigitData
 from utils.math import sigmoid
 
 mnist_data=input_data.read_data_sets("MNIST_data/",one_hot=False)
@@ -25,6 +27,7 @@ class Backpropagation(object):
         return a
 
     def gradient_descent(self):
+        # iterations
         for i in range(10):
             random.shuffle(self.training_contents)
             smaller_training_contents = [
@@ -36,6 +39,7 @@ class Backpropagation(object):
             if (i==9):
                 exit()
     def tc_change_error(self, small_tc):
+        # learning rate
         learning_rate = 3.5
         update_b = [np.zeros(b.shape) for b in self.biases]
         update_w = [np.zeros(w.shape) for w in self.weights]
@@ -84,14 +88,7 @@ class Backpropagation(object):
         for (x, y) in test_results:
             if(int(x==y)):
                 accurate_result+=1
-        accuracy=(accurate_result/len(self.test_contents)) * 100
-        #i=0
-        #for (x,y) in test_contents :
-          #  print ('\ntest image index = ', i)
-           # print ('prediction result = ', np.argmax(self.feedforward(x)), '\tanswer =', y)
-            #print ('prediction correct? =', test_content_result == test_answers[i])
-         #   i+1
-        return accuracy
+        return (accurate_result/len(self.test_contents)) * 100
 
     def fill_array(self,j):
         e = np.zeros((10, 1))
@@ -99,15 +96,13 @@ class Backpropagation(object):
         return e
 
     def load_data(self):
-        training_contents = np.asarray(mnist_data.train.images)
-        training_answers = np.asarray(mnist_data.train.labels)
-        test_contents = np.asarray(mnist_data.test.images)
-        test_answers = np.asarray(mnist_data.test.labels)
-        training_inputs = [np.reshape(content, (784, 1)) for content in training_contents]
-        training_results = [self.fill_array(answer) for answer in training_answers]
+        data = DigitData()
+        training_inputs = [np.reshape(content, (784, 1)) for content in data.X_train]
+        training_results = [self.fill_array(answer) for answer in data.Y_train]
         training_contents = zip(training_inputs, training_results)
-        test_inputs = [np.reshape(content, (784, 1)) for content in test_contents]
-        test_contents = zip(test_inputs, test_answers)
+        test_inputs = [np.reshape(content, (784, 1)) for content in data.X_test]
+        test_contents = zip(test_inputs, data.Y_test)
+
         return (list(training_contents), list(test_contents))
 
 

@@ -5,29 +5,27 @@ from utils.math import sigmoid, calc_acc
 
 
 class LogisticRegression(object):
-    def __init__(self, learning_rate):
+    def __init__(self, eta):
         self.param = None
-        self.learning_rate = learning_rate
+        self.eta = eta
 
     def _initialize_parameters(self, X):
-        n_features = X.shape[1]
-        # Initialize parameters between [-1/sqrt(N), 1/sqrt(N)]
-        limit = 1 / np.math.sqrt(n_features)
-        self.param = np.random.uniform(-limit, limit, (n_features,))
+        feature_size = X.shape[1]
+        limit = 1 / np.math.sqrt(feature_size)
+        self.param = np.random.uniform(-limit, limit, (feature_size,))
 
-    def fit(self, X, y, n_iterations=4000):
+    def fit(self, X, y, epoch=4000):
         self._initialize_parameters(X)
         # Tune parameters for n iterations
-        for i in range(n_iterations):
+        for i in range(epoch):
             # Make a new prediction
             y_pred = sigmoid(X.dot(self.param))
             # Move against the gradient of the loss function with
             # respect to the parameters to minimize the loss
-            self.param -= self.learning_rate * -(y - y_pred).dot(X)
+            self.param -= self.eta * -(y - y_pred).dot(X)
 
     def predict(self, X):
-        y_pred = np.round(sigmoid(X.dot(self.param)))
-        return y_pred.astype(int)
+        return np.round(sigmoid(X.dot(self.param))).astype(int)
 
 
 def one_to_rest(sample_size=5000,learning_rate=0.1):
