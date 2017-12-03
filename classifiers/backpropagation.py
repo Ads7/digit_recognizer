@@ -1,6 +1,5 @@
 import random
 import numpy as np
-import math
 from tensorflow.examples.tutorials.mnist import input_data
 
 from utils.math import sigmoid

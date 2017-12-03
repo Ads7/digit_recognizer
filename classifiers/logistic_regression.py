@@ -5,7 +5,7 @@ from utils.math import sigmoid, calc_acc
 
 
 class LogisticRegression(object):
-    def __init__(self, learning_rate=.1):
+    def __init__(self, learning_rate):
         self.param = None
         self.learning_rate = learning_rate
 
@@ -30,11 +30,11 @@ class LogisticRegression(object):
         return y_pred.astype(int)
 
 
-def one_to_rest(sample_size=1000):
+def one_to_rest(sample_size=5000,learning_rate=0.1):
     data = DigitData(sample_size)
     predictive_model = np.full((data.Y_test.shape[0], 10), 0, dtype=int)
     confidence_list = []
-    model = LogisticRegression()
+    model = LogisticRegression(learning_rate)
     for clasification in data.classes:
         print "model for " + str(clasification)
         Y = np.array([1 if (y[clasification] == 1) else 0 for y in data.Y_train])
