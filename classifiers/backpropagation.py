@@ -1,12 +1,8 @@
 import random
 import numpy as np
 
-from tensorflow.examples.tutorials.mnist import input_data
-
 from utils.data_processing import DigitData
 from utils.math import sigmoid
-
-mnist_data = input_data.read_data_sets("MNIST_data/", one_hot=False)
 
 
 class Backpropagation(object):
@@ -14,7 +10,7 @@ class Backpropagation(object):
         self.learning_rate=learning_rate
         self.iterations=iterations
         (self.training_contents, self.test_contents) = self.load_data()
-        self.main([784, 30, 10])
+        # self.main([784, 30, 10])
 
     def main(self, layers):
         self.num_layers = len(layers)
@@ -102,7 +98,6 @@ class Backpropagation(object):
         training_contents = zip(training_inputs, training_results)
         test_inputs = [np.reshape(content, (784, 1)) for content in data.X_test]
         test_contents = zip(test_inputs, data.Y_test)
-
         return (list(training_contents), list(test_contents))
 
 
