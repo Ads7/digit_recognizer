@@ -1,8 +1,7 @@
 import numpy  as np
 import random
 # import matplotlib.pyplot as plt
-
-from final_svm import DigitData
+from utils.data_processing import DigitData
 
 
 class SVM():

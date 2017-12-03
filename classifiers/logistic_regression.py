@@ -55,5 +55,5 @@ def one_to_rest(sample_size=1000):
             digit[value_predict] = 1
             predictive_model[i] = digit
     # Calculate accuracy
-    calc_acc(data.Y_test, predictive_model)
+    return calc_acc(data.Y_test, predictive_model)
 

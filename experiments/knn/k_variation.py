@@ -3,14 +3,14 @@ import time
 from classifiers.knn import KNN
 from experiments.logistic_regresssion.sample_size_variation import BASE_NAME
 from . import BUFFER_SIZE, MODULE
-from utils.data_processing import DigitData, write_results_to_file, MAX_TRAIN_DATA
+from utils.data_processing import DigitData, write_results_to_file
 from utils.math import calc_acc
 
 
 def variate_sample_size():
     results = []
-    for i in range(500, MAX_TRAIN_DATA, 1000):
-        data = DigitData(MAX_TRAIN_DATA)
+    data = DigitData(5000)
+    for i in range(1, 15):
         start_time = time.time()
         model = KNN(k=i, X_train=data.X_train, Y_train=data.Y_train)
         y_predictions = model.predict(data.X_test)

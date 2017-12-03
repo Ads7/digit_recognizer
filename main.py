@@ -1,0 +1,3 @@
+from experiments.logistic_regresssion.sample_size_variation import variate_sample_size
+
+variate_sample_size()
