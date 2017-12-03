@@ -2,6 +2,9 @@ import random
 import numpy as np
 import math
 from tensorflow.examples.tutorials.mnist import input_data
+
+from utils.math import sigmoid
+
 mnist_data=input_data.read_data_sets("MNIST_data/",one_hot=False)
 
 class Backpropagation(object):
@@ -19,7 +22,7 @@ class Backpropagation(object):
 
     def feedforward(self, a):
         for b, w in zip(self.biases, self.weights):
-            a = self.sigmoid(np.dot(w, a)+b)
+            a = sigmoid(np.dot(w, a)+b)
         return a
 
     def gradient_descent(self):
@@ -60,15 +63,15 @@ class Backpropagation(object):
         for b, w in zip(self.biases, self.weights):
             z = np.dot(w, activation)+b
             zs.append(z)
-            activation = self.sigmoid(z)
+            activation = sigmoid(z)
             activations.append(activation)
-        zs_sig=self.sigmoid(zs[-1])
+        zs_sig=sigmoid(zs[-1])
         delta = (activations[-1] - y) * (zs_sig * (1-zs_sig))
         update_b[-1] = delta
         update_w[-1] = np.dot(delta, activations[-2].transpose())
         for l in range(2, self.num_layers):
             z = zs[-l]
-            z_sig=self.sigmoid(z)
+            z_sig=sigmoid(z)
             sp = (z_sig * (1 - z_sig))
             delta = np.dot(self.weights[-l+1].transpose(), delta) * sp
             update_b[-l] = delta
@@ -108,8 +111,6 @@ class Backpropagation(object):
         test_contents = zip(test_inputs, test_answers)
         return (list(training_contents), list(test_contents))
 
-    def sigmoid(self,z):
-        return 1.0 / (1.0 + np.exp(-z))
 
 bp = Backpropagation()
 bp.main([784, 100, 10])
