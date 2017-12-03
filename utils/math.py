@@ -1,5 +1,8 @@
 import numpy as np
 
+def euclidean_distance(x1,x2):
+    distance = sum((x1 - x2) ** 2)
+    return distance
 
 def make_diagonal(x):
     """ Converts a vector into an diagonal matrix """
@@ -13,3 +16,8 @@ def sigmoid(x):
 
 def gradient(x):
     return sigmoid(x) * (1 - sigmoid(x))
+
+def calc_acc(y, y_prediction):
+    idx = np.where(y_prediction == 1)
+    TP = np.sum(y_prediction[idx] == y[idx])
+    return float(TP) / len(y)
