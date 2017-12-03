@@ -35,12 +35,12 @@ nbconvert==5.3.1
 nbformat==4.4.0
 notebook==5.2.1
 numpy==1.13.3
-pandas==0.21.0
 pandocfilters==1.4.2
 pathlib2==2.3.0
 pbr==3.1.1
 pexpect==4.3.0
 pickleshare==0.7.4
+progressbar==2.3
 prompt-toolkit==1.0.15
 protobuf==3.5.0
 ptyprocess==0.5.2
@@ -51,8 +51,6 @@ pytz==2017.3
 pyzmq==16.0.3
 qtconsole==4.3.1
 scandir==1.6
-scikit-learn==0.19.1
-scipy==1.0.0
 simplegeneric==0.8.1
 singledispatch==3.4.0.3
 six==1.11.0
