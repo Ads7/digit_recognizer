@@ -14,7 +14,7 @@ def learning_rate_variation():
     for i in range(1, 10):
         print "running for learning rate"+str(i)
         start_time = time.time()
-        acc = one_to_rest(i, i * 1.0 / 10.0)
+        acc = one_to_rest(5000, i * 1.0 / 10.0)
         results.append([i, acc, time.time() - start_time])
         if len(results) % BUFFER_SIZE == 0:
             write_results_to_file(results, MODULE + BASE_NAME + ".csv")
