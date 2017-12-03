@@ -12,6 +12,7 @@ import time
 def learning_rate_variation():
     results = []
     for i in range(1, 10):
+        print "running for learning rate"+str(i)
         start_time = time.time()
         acc = one_to_rest(i, i * 1.0 / 10.0)
         results.append([i, acc, time.time() - start_time])

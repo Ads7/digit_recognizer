@@ -10,6 +10,7 @@ from utils.math import calc_acc
 def variate_sample_size():
     results = []
     for i in range(500, MAX_TRAIN_DATA, 1000):
+        print "running for sample"+str(i)
         data = DigitData(MAX_TRAIN_DATA)
         start_time = time.time()
         model = KNN(k=i, X_train=data.X_train, Y_train=data.Y_train)

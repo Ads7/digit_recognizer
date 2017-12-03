@@ -12,6 +12,7 @@ import time
 def variate_sample_size():
     results = []
     for i in range(500, MAX_TRAIN_DATA, 1000):
+        print "running for sample"+str(i)
         start_time = time.time()
         acc = one_to_rest(i)
         results.append([i, acc, time.time() - start_time])

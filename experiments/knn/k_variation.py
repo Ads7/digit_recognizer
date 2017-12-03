@@ -11,6 +11,7 @@ def k_variation():
     results = []
     data = DigitData(5000)
     for i in range(1, 15):
+        print "running for k"+str(k)
         start_time = time.time()
         model = KNN(k=i, X_train=data.X_train, Y_train=data.Y_train)
         y_predictions = model.predict(data.X_test)
