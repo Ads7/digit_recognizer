@@ -9,7 +9,7 @@ BASE_NAME = os.path.basename(__file__).split('.')[0]
 import time
 
 
-def variate_sample_size():
+def learning_rate_variation():
     results = []
     for i in range(1, 10):
         start_time = time.time()

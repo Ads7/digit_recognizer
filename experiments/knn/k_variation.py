@@ -7,7 +7,7 @@ from utils.data_processing import DigitData, write_results_to_file
 from utils.math import calc_acc
 
 
-def variate_sample_size():
+def k_variation():
     results = []
     data = DigitData(5000)
     for i in range(1, 15):
