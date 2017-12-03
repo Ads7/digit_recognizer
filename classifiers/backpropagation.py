@@ -106,5 +106,5 @@ class Backpropagation(object):
         return (list(training_contents), list(test_contents))
 
 
-bp = Backpropagation()
-bp.main([784, 100, 10])
+# bp = Backpropagation()
+# bp.main([784, 100, 10])
