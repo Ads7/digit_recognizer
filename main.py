@@ -1,3 +1,6 @@
+from experiments.knn.sample_size_variation import variate_sample_size
 from experiments.logistic_regresssion.learning_rate_variation import learning_rate_variation
 
 learning_rate_variation()
+
+variate_sample_size()

@@ -33,16 +33,3 @@ class KNN(object):
 
     def predict(self, X_test):
         return np.array(map(lambda x: self.get_prediction(x), X_test))
-
-
-data = DigitData(1000)
-model = KNN(k=10, X_train=data.X_train, Y_train=data.Y_train)
-y_predictions = model.predict(data.X_test)
-acc = calc_acc(data.Y_test, y_predictions)
-print('prediction accuracy=', str(acc) + '%')
-# def main():
-#     data = DigitData(100)
-#     model = KNN(10, data.X_train, data.Y_train)
-#     y_predictions = model.predict(data.X_test)
-#     acc = calc_acc(data.Y_test, y_predictions)
-#     print('prediction accuracy=', str(acc) + '%')
