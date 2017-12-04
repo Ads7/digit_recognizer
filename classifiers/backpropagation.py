@@ -10,7 +10,7 @@ class Backpropagation(object):
         self.learning_rate=learning_rate
         self.iterations=iterations
         (self.training_contents, self.test_contents) = self.load_data()
-        # self.main([784, 30, 10])
+        self.main([784, 30, 10])
 
     def main(self, layers):
         self.num_layers = len(layers)
@@ -33,7 +33,7 @@ class Backpropagation(object):
             for small_tc in smaller_training_contents:
                 self.tc_change_error(small_tc)
             print("Iteration", "[", i, "]", " : ", round(self.accuracy(self.test_contents), 2), "%")
-            if (i == 9):
+            if (i == self.iterations-1):
                 exit()
 
     def tc_change_error(self, small_tc):
