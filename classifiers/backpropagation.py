@@ -93,10 +93,10 @@ class Backpropagation(object):
                 accurate_result += 1
         return (accurate_result / len(self.test_contents)) * 100
 
-    def fill_array(self, j):
-        e = np.zeros((10, 1))
-        e[j] = 1.0
-        return e
+    def fill_array(self, ans):
+        array = np.zeros((10, 1))
+        array[ans] = 1.0
+        return array
 
     def load_data(self):
         data = DigitData()
