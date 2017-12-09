@@ -21,7 +21,7 @@ class Backpropagation(object):
     def feed_forward(self, image_test):
         input_values=zip(self.feature_bias, self.feature_weights)
         for bias, weight in input_values:
-            image_test = calculate_sigmoid(np.dot(weight, image_test) + bias)
+            image_test = sigmoid(np.dot(weight, image_test) + bias)
         return image_test
 
     def gradient_descent(self):
@@ -63,7 +63,7 @@ class Backpropagation(object):
         for feature_bias, feature_weight in zip(self.feature_bias, self.feature_weights):
             derivative_result = np.dot(feature_weight, change) + feature_bias
             derivative.append(derivative_result)
-            change = calculate_sigmoid(derivative_result)
+            change = sigmoid(derivative_result)
             changes.append(change)
         return derivative,changes,change
 
@@ -71,13 +71,13 @@ class Backpropagation(object):
         update_b = [np.zeros(feature_bias.shape) for feature_bias in self.feature_bias]
         update_w = [np.zeros(feature_weight.shape) for feature_weight in self.feature_weights]
         derivative, changes, change=self.update_derivate_changes([], [t_image], t_image)
-        derivative_sig = calculate_sigmoid(derivative[-1])
+        derivative_sig = sigmoid(derivative[-1])
         delta = (changes[-1] - t_ans) * (derivative_sig * (1 - derivative_sig))
         update_b[-1] = delta
         update_w[-1] = np.dot(delta, changes[-2].transpose())
         for layer_no in range(2, self.num_layers):
             derivative_result = derivative[-layer_no]
-            derivative_result_sig = calculate_sigmoid(derivative_result)
+            derivative_result_sig = sigmoid(derivative_result)
             derivative_sig_prime = (derivative_result_sig * (1 - derivative_result_sig))
             delta = np.dot(self.feature_weights[-layer_no + 1].transpose(), delta) * derivative_sig_prime
             update_b[-layer_no] = delta
@@ -107,6 +107,4 @@ class Backpropagation(object):
         test_contents = zip(test_inputs, data.Y_test)
         return (list(training_contents), list(test_contents))
 
-def calculate_sigmoid(val):
-    return 1.0/(1.0+np.exp(-val))
 
