@@ -2,7 +2,7 @@ import os
 
 from classifiers.logistic_regression import one_to_rest
 from . import MODULE, BUFFER_SIZE
-from utils.data_processing import MAX_TRAIN_DATA, write_results_to_file
+from utils.data_processing import write_results_to_file
 
 BASE_NAME = os.path.basename(__file__).split('.')[0]
 
