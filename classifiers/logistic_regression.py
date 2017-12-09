@@ -14,15 +14,18 @@ class LogisticRegression(object):
         limit = 1 / np.math.sqrt(feature_size)
         self.param = np.random.uniform(-limit, limit, (feature_size,))
 
+    def gradient_decent(self,X,y,y_pred):
+        self.param -= self.eta * -(y - y_pred).dot(X)
+
     def fit(self, X, y, epoch=4000):
         self._initialize_parameters(X)
         # Tune parameters for n iterations
         for i in range(epoch):
             # Make a new prediction
             y_pred = sigmoid(X.dot(self.param))
-            # Move against the gradient of the loss function with
-            # respect to the parameters to minimize the loss
-            self.param -= self.eta * -(y - y_pred).dot(X)
+            # minimize the loss
+            self.gradient_decent(X,y,y_pred)
+
 
     def predict(self, X):
         return np.round(sigmoid(X.dot(self.param))).astype(int)
