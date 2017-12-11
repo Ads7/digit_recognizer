@@ -10,6 +10,11 @@ import time
 
 
 def variate_sample_size():
+    """
+    To study the variation of sample size in logistic regression
+    the variation are form 500 to MAX_TRAIN_DATA with step size of 1000
+    :return: creates a csv of observations
+    """
     results = []
     for i in range(500, MAX_TRAIN_DATA, 1000):
         print "running for sample"+str(i)

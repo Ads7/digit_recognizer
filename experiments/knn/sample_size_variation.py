@@ -8,6 +8,10 @@ from utils.math import calc_acc
 
 
 def variate_sample_size():
+    """
+    To study the variation of training sample size from 500 to MAX_TRAIN_DATA step size as 1000
+    :return: csv with acc. and time taken in each sample size
+    """
     results = []
     for i in range(500, MAX_TRAIN_DATA, 1000):
         print "running for sample"+str(i)

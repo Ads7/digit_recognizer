@@ -5,21 +5,41 @@ from utils.math import sigmoid, calc_acc
 
 
 class LogisticRegression(object):
+
     def __init__(self, eta):
+        """
+
+        :param eta: learning rate for the regression
+        """
         self.param = None
         self.eta = eta
 
     def _initialize_parameters(self, X):
+        """
+
+        :param X: training data
+        """
         feature_size = X.shape[1]
         limit = 1 / np.math.sqrt(feature_size)
         self.param = np.random.uniform(-limit, limit, (feature_size,))
 
     def gradient_decent(self,X,y,y_pred):
+        """
+
+        :param X: training data
+        :param y: y labels given
+        :param y_pred: y labels predicted
+        """
         self.param -= self.eta * -(y - y_pred).dot(X)
 
     def fit(self, X, y, epoch=4000):
+        """
+
+        :param X: X training images data
+        :param y: training labels
+        :param epoch: number of times to run (stopping criteria)
+        """
         self._initialize_parameters(X)
-        # Tune parameters for n iterations
         for i in range(epoch):
             # Make a new prediction
             y_pred = sigmoid(X.dot(self.param))
@@ -28,10 +48,22 @@ class LogisticRegression(object):
 
 
     def predict(self, X):
+
+        """
+
+        :param X: test data
+        :return: y labels for given X
+        """
         return np.round(sigmoid(X.dot(self.param))).astype(int)
 
 
 def one_to_rest(sample_size=5000,learning_rate=0.1):
+    """
+
+    :param sample_size: sample of training data to include
+    :param learning_rate: learning rate for the logistic regression
+    :return: accuracy of the algo
+    """
     data = DigitData(sample_size)
     predictive_model = np.full((data.Y_test.shape[0], 10), 0, dtype=int)
     confidence_list = []

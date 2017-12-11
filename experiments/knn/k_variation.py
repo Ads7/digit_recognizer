@@ -8,10 +8,14 @@ from utils.math import calc_acc
 
 
 def k_variation():
+    """
+     To study the variation of K in KNN from 1 to 15
+    :return: creates csv with acc. and time taken
+    """
     results = []
     data = DigitData(5000)
     for i in range(1, 15):
-        print "running for k"+str(i)
+        print "running for k" + str(i)
         start_time = time.time()
         model = KNN(k=i, X_train=data.X_train, Y_train=data.Y_train)
         y_predictions = model.predict(data.X_test)

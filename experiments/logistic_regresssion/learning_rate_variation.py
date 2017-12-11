@@ -10,6 +10,11 @@ import time
 
 
 def learning_rate_variation():
+    """
+    To study the variation of learning rate in the logistic regression
+    the learning rate is varied from 0.1 to 0.9
+    :return:  creates a csv with time taken , accuracy
+    """
     results = []
     for i in range(1, 10):
         print "running for learning rate"+str(i)
