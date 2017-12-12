@@ -1,0 +1,166 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>utils package &#8212; Digit recognition  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="utils-package">
+<h1>utils package<a class="headerlink" href="#utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-utils.data_processing">
+<span id="utils-data-processing-module"></span><h2>utils.data_processing module<a class="headerlink" href="#module-utils.data_processing" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="utils.data_processing.DigitData">
+<em class="property">class </em><code class="descclassname">utils.data_processing.</code><code class="descname">DigitData</code><span class="sig-paren">(</span><em>train_limit=None</em>, <em>test_limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.data_processing.DigitData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="utils.data_processing.DigitData.X_test">
+<code class="descname">X_test</code><em class="property"> = array([[ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.],        ...,         [ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.]], dtype=float32)</em><a class="headerlink" href="#utils.data_processing.DigitData.X_test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="utils.data_processing.DigitData.X_train">
+<code class="descname">X_train</code><em class="property"> = array([[ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.],        ...,         [ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.],        [ 0.,  0.,  0., ...,  0.,  0.,  0.]], dtype=float32)</em><a class="headerlink" href="#utils.data_processing.DigitData.X_train" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="utils.data_processing.DigitData.Y_test">
+<code class="descname">Y_test</code><em class="property"> = array([[0, 0, 0, ..., 1, 0, 0],        [0, 0, 1, ..., 0, 0, 0],        [0, 1, 0, ..., 0, 0, 0],        ...,         [0, 0, 0, ..., 0, 0, 0],        [0, 0, 0, ..., 0, 0, 0],        [0, 0, 0, ..., 0, 0, 0]])</em><a class="headerlink" href="#utils.data_processing.DigitData.Y_test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="utils.data_processing.DigitData.Y_train">
+<code class="descname">Y_train</code><em class="property"> = array([[0, 0, 0, ..., 1, 0, 0],        [0, 0, 0, ..., 0, 0, 0],        [0, 0, 0, ..., 0, 0, 0],        ...,         [0, 0, 0, ..., 0, 0, 0],        [0, 0, 0, ..., 0, 0, 0],        [0, 0, 0, ..., 0, 1, 0]])</em><a class="headerlink" href="#utils.data_processing.DigitData.Y_train" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="utils.data_processing.DigitData.classes">
+<code class="descname">classes</code><em class="property"> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</em><a class="headerlink" href="#utils.data_processing.DigitData.classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="utils.data_processing.DigitData.mnist">
+<code class="descname">mnist</code><em class="property"> = Datasets(train=&lt;tensorflow.contrib.learn.python.learn.datasets.mnist.DataSet object&gt;, validation=&lt;tensorflow.contrib.learn.python.learn.datasets.mnist.DataSet object&gt;, test=&lt;tensorflow.contrib.learn.python.learn.datasets.mnist.DataSet object&gt;)</em><a class="headerlink" href="#utils.data_processing.DigitData.mnist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.data_processing.write_results_to_file">
+<code class="descclassname">utils.data_processing.</code><code class="descname">write_results_to_file</code><span class="sig-paren">(</span><em>values</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.data_processing.write_results_to_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils.math">
+<span id="utils-math-module"></span><h2>utils.math module<a class="headerlink" href="#module-utils.math" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="utils.math.calc_acc">
+<code class="descclassname">utils.math.</code><code class="descname">calc_acc</code><span class="sig-paren">(</span><em>y</em>, <em>y_prediction</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.math.calc_acc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="utils.math.euclidean_distance">
+<code class="descclassname">utils.math.</code><code class="descname">euclidean_distance</code><span class="sig-paren">(</span><em>x1</em>, <em>x2</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.math.euclidean_distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="utils.math.gradient">
+<code class="descclassname">utils.math.</code><code class="descname">gradient</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.math.gradient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="utils.math.make_diagonal">
+<code class="descclassname">utils.math.</code><code class="descname">make_diagonal</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.math.make_diagonal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a vector into an diagonal matrix</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.math.sigmoid">
+<code class="descclassname">utils.math.</code><code class="descname">sigmoid</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.math.sigmoid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Amandeep Sangeetha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/utils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

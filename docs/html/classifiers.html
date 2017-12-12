@@ -1,0 +1,327 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>classifiers package &#8212; Digit recognition  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="experiments package" href="experiments.html" />
+    <link rel="prev" title="Welcome to Digit recognition’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="classifiers-package">
+<h1>classifiers package<a class="headerlink" href="#classifiers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-classifiers.backpropagation">
+<span id="classifiers-backpropagation-module"></span><h2>classifiers.backpropagation module<a class="headerlink" href="#module-classifiers.backpropagation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="classifiers.backpropagation.Backpropagation">
+<em class="property">class </em><code class="descclassname">classifiers.backpropagation.</code><code class="descname">Backpropagation</code><span class="sig-paren">(</span><em>learning_rate=3.5</em>, <em>iterations=10</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.accuracy">
+<code class="descname">accuracy</code><span class="sig-paren">(</span><em>test_contents</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.accuracy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.backpropagation_algo">
+<code class="descname">backpropagation_algo</code><span class="sig-paren">(</span><em>t_image</em>, <em>t_ans</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.backpropagation_algo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.feature_update">
+<code class="descname">feature_update</code><span class="sig-paren">(</span><em>small_tc</em>, <em>update_b</em>, <em>update_w</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.feature_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.feed_forward">
+<code class="descname">feed_forward</code><span class="sig-paren">(</span><em>image_test</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.feed_forward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.fill_array">
+<code class="descname">fill_array</code><span class="sig-paren">(</span><em>ans</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.fill_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.get_delta_error">
+<code class="descname">get_delta_error</code><span class="sig-paren">(</span><em>small_tc</em>, <em>update_b</em>, <em>update_w</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.get_delta_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.gradient_descent">
+<code class="descname">gradient_descent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.gradient_descent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.load_data">
+<code class="descname">load_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.load_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.main">
+<code class="descname">main</code><span class="sig-paren">(</span><em>layers</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.tc_change_error">
+<code class="descname">tc_change_error</code><span class="sig-paren">(</span><em>small_tc</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.tc_change_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.backpropagation.Backpropagation.update_derivate_changes">
+<code class="descname">update_derivate_changes</code><span class="sig-paren">(</span><em>derivative</em>, <em>changes</em>, <em>change</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.backpropagation.Backpropagation.update_derivate_changes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-classifiers.knn">
+<span id="classifiers-knn-module"></span><h2>classifiers.knn module<a class="headerlink" href="#module-classifiers.knn" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="classifiers.knn.KNN">
+<em class="property">class </em><code class="descclassname">classifiers.knn.</code><code class="descname">KNN</code><span class="sig-paren">(</span><em>X_train</em>, <em>Y_train</em>, <em>k=10</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.knn.KNN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="classifiers.knn.KNN.X_train">
+<code class="descname">X_train</code><em class="property"> = None</em><a class="headerlink" href="#classifiers.knn.KNN.X_train" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="classifiers.knn.KNN.Y_train">
+<code class="descname">Y_train</code><em class="property"> = None</em><a class="headerlink" href="#classifiers.knn.KNN.Y_train" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="classifiers.knn.KNN.get_majority">
+<em class="property">static </em><code class="descname">get_majority</code><span class="sig-paren">(</span><em>k_nearest_neighbors</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.knn.KNN.get_majority" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>k_nearest_neighbors</strong> – nearest neighbours</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">majority</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="classifiers.knn.KNN.get_nearest_neighbors">
+<code class="descname">get_nearest_neighbors</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.knn.KNN.get_nearest_neighbors" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> – single image array</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nearest neighbors for given x</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="classifiers.knn.KNN.get_prediction">
+<code class="descname">get_prediction</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.knn.KNN.get_prediction" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> – single X for testing</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Y predictin for a given test data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="classifiers.knn.KNN.k">
+<code class="descname">k</code><em class="property"> = 10</em><a class="headerlink" href="#classifiers.knn.KNN.k" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="classifiers.knn.KNN.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X_test</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.knn.KNN.predict" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X_test</strong> (<em>numpy array</em>) – Test data of images</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">numpy array of labels for the given X</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-classifiers.logistic_regression">
+<span id="classifiers-logistic-regression-module"></span><h2>classifiers.logistic_regression module<a class="headerlink" href="#module-classifiers.logistic_regression" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="classifiers.logistic_regression.LogisticRegression">
+<em class="property">class </em><code class="descclassname">classifiers.logistic_regression.</code><code class="descname">LogisticRegression</code><span class="sig-paren">(</span><em>eta</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.logistic_regression.LogisticRegression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="classifiers.logistic_regression.LogisticRegression.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em>, <em>epoch=4000</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.logistic_regression.LogisticRegression.fit" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> – X training images data</li>
+<li><strong>y</strong> – training labels</li>
+<li><strong>epoch</strong> – number of times to run (stopping criteria)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="classifiers.logistic_regression.LogisticRegression.gradient_decent">
+<code class="descname">gradient_decent</code><span class="sig-paren">(</span><em>X</em>, <em>y</em>, <em>y_pred</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.logistic_regression.LogisticRegression.gradient_decent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> – training data</li>
+<li><strong>y</strong> – y labels given</li>
+<li><strong>y_pred</strong> – y labels predicted</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="classifiers.logistic_regression.LogisticRegression.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.logistic_regression.LogisticRegression.predict" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> – test data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">y labels for given X</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="classifiers.logistic_regression.one_to_rest">
+<code class="descclassname">classifiers.logistic_regression.</code><code class="descname">one_to_rest</code><span class="sig-paren">(</span><em>sample_size=5000</em>, <em>learning_rate=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#classifiers.logistic_regression.one_to_rest" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sample_size</strong> – sample of training data to include</li>
+<li><strong>learning_rate</strong> – learning rate for the logistic regression</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">accuracy of the algo</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-classifiers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-classifiers" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Digit recognition’s documentation!</a></li>
+      <li>Next: <a href="experiments.html" title="next chapter">experiments package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Amandeep Sangeetha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/classifiers.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
