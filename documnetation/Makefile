@@ -6,7 +6,9 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = Digitrecognition
 SOURCEDIR     = source
-BUILDDIR      = build
+BUILDDIR      = ../docs
+PDFBUILDDIR   = /tmp
+PDF           = ../manual.pdf
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -18,3 +20,4 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
