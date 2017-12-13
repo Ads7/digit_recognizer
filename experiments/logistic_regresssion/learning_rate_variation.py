@@ -16,7 +16,7 @@ def learning_rate_variation():
     :return:  creates a csv with time taken , accuracy
     """
     results = []
-    for i in range(1, 10):
+    for i in range(1, 10,2):
         print "running for learning rate"+str(i)
         start_time = time.time()
         acc = one_to_rest(5000, i * 1.0 / 10.0)
