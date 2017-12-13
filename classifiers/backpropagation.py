@@ -100,11 +100,15 @@ class Backpropagation(object):
 
     def load_data(self):
         data = DigitData()
-        training_inputs = [np.reshape(content, (784, 1)) for content in data.X_train]
-        training_results = [self.fill_array(answer) for answer in data.Y_train]
+        train_images = np.asarray(data.mnist_data_bp.train.images)
+        train_labels = np.asarray(data.mnist_data_bp.train.labels)
+        test_images = np.asarray(data.mnist_data_bp.test.images)
+        test_labels = np.asarray(data.mnist_data_bp.test.labels)
+        training_inputs = [np.reshape(content, (784, 1)) for content in train_images]
+        training_results = [self.fill_array(answer) for answer in train_labels]
         training_contents = zip(training_inputs, training_results)
-        test_inputs = [np.reshape(content, (784, 1)) for content in data.X_test]
-        test_contents = zip(test_inputs, data.Y_test)
+        test_inputs = [np.reshape(content, (784, 1)) for content in test_images]
+        test_contents = zip(test_inputs, test_labels)
         return (list(training_contents), list(test_contents))
 
 

@@ -13,9 +13,11 @@ MAX_TEST_DATA = 10000
 
 class DigitData(object):
     mnist = input_data.read_data_sets(ROOT_DIR + "/data/", one_hot=True)
+    mnist_data_bp = input_data.read_data_sets(ROOT_DIR + "/data/", one_hot=False)
     classes = DIGIT_CLASSES
     X_train, Y_train = np.array(mnist.train.images), np.array(mnist.train.labels, dtype=int)
     X_test, Y_test = np.array(mnist.test.images), np.array(mnist.test.labels, dtype=int)
+
 
     def __init__(self, train_limit=None, test_limit=None):
         if train_limit and train_limit < MAX_TRAIN_DATA:
