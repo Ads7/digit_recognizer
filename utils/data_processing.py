@@ -8,7 +8,7 @@ ROOT_DIR = BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 
 DIGIT_CLASSES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 MAX_TRAIN_DATA = 55000
-MAX_TEST_DATA = 0
+MAX_TEST_DATA = 10000
 
 
 class DigitData(object):

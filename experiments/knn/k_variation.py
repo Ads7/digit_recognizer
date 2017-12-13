@@ -13,9 +13,9 @@ def k_variation():
     :return: creates csv with acc. and time taken
     """
     results = []
-    data = DigitData(5000)
-    for i in range(1, 15):
-        print "running for k" + str(i)
+    data = DigitData(750,250)
+    for i in range(1, 15, 2):
+        print "running for k : " + str(i)
         start_time = time.time()
         model = KNN(k=i, X_train=data.X_train, Y_train=data.Y_train)
         y_predictions = model.predict(data.X_test)

@@ -62,4 +62,7 @@ class KNN(object):
         :return: numpy array of labels for the given X
         :type X_test: numpy array
         """
-        return np.array(map(lambda x: self.get_prediction(x), X_test))
+        result = []
+        for i,x in enumerate(X_test):
+            result.append(self.get_prediction(x))
+        return np.array(result)
