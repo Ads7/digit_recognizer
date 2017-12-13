@@ -25,3 +25,6 @@ The data set taken is MNIST dataset taken through tensorflow utils.
 all lib dependencies are given in req.txt
 
 a basic running for all algos is given in main.py
+
+data set used http://yann.lecun.com/exdb/mnist/
+downloaded using tensor flow
