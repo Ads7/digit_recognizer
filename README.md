@@ -23,6 +23,9 @@ The data set taken is MNIST dataset taken through tensorflow utils.
 ````
 
 all lib dependencies are given in req.txt
+```
+    pip install -r req.txt
+```
 
 a basic running for all algos is given in main.py
 
